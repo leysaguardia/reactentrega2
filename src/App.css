@@ -1,0 +1,36 @@
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+div {
+  padding: 20px;
+}
+
+.titulo {
+  text-align: center;
+  color: #333;
+  font-size: 36px;
+  margin-top: 10px;
+}
+
+.imgmermelada{
+  width: 100%;
+  max-width: 250px; 
+  display: flexbox;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.saludo {
+  font-size: 24px;
+  color: #555;
+  text-align: center;
+  margin-top: 10px;
+}
+
+

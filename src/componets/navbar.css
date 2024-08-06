@@ -1,0 +1,40 @@
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .navbar img {
+    max-width: 100%; 
+    height: auto;
+  }
+  
+  .brand {
+    font-size: 24px; 
+    font-weight: bold; 
+    color:#01402E;
+  }
+  
+  ul {
+    display: flex;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+  }
+  
+ p {
+    margin: 0 15px; 
+    font-size: 18px; 
+    color: #555; 
+  }
+  
+  li:hover {
+    color: #007bff; 
+    cursor: pointer; 
+  }
+  
