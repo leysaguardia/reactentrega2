@@ -30,7 +30,7 @@ const productos= [
       gramos:"475gr",
       categoria:"Citricas",
       stock:"10",
-      imagen:"public/img/pomelo.jpg",
+      imagen:"/img/pomelo.jpg",
     },
     
     {

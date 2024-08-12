@@ -7,20 +7,25 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
     const { idProducto } = useParams ()
-
+    console.log(idProducto);
 useEffect(()=>{
-        obtenerProductos()
-            .then((data)=>{
-                const productoEncontrado = data.find( (productoData) => String(productoData.id) ===idProducto)
-            setProducto(productoEncontrado)
-            })
-}, [] )
+        obtenerProductos() .then((data)=>{
+            console.log("data" , data);
+                const productoEncontrado = data.find(
+                     (productoData) => productoData.id===parseInt(idProducto)
+                    );
+                if(productoEncontrado){
+            setProducto(productoEncontrado);
+        } 
+    console.log(productoEncontrado);
+    
+    });
+}, [] );
 
 
 
-  return (
-      <ItemDetail producto={producto}/>
-  )
-}
+  return  <ItemDetail producto={producto}/>;
+  
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
