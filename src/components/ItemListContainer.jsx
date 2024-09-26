@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"
 import obtenerProductos from "../data/data.js";
-import ItemList from "./ItemList";
+import ItemList from "./ItemList.jsx";
 import { useParams } from "react-router-dom"
 
 

@@ -1,19 +1,29 @@
 
 import './App.css'
 
-import Titulo from './componets/Titulo'
-import NavBar from './componets/NavBar'
-import ItemListContainer from './componets/ItemListContainer'
-import ItemDetailContainer from './componets/ItemDetailContainer'
+import Titulo from './components/Titulo'
+import NavBar from './components/NavBar'
+import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import ItemCount from './components/ItemCount/ItemCount'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ContadorEventListener from './components/ContadorEventListener'
+import Formulario from './components/Formulario'
+import CartProvider from './context/CartContext' 
+
 
 
 function App() {
  
+
+    const agregarAlCarrito = (count) =>{
+      console.log(count)
+    }
+
   
   return (
       <BrowserRouter >
-
+        <CartProvider>
           <NavBar/>
 
             <Routes>
@@ -22,10 +32,16 @@ function App() {
               <Route path="/" element={ <h1 className='titulo'>{}</h1>}/>
               <Route path="/categoria/:idCategoria" element={<ItemListContainer  saludo= "Mermeladas naturales, libres de aditivos e ingredientes artificiales" />} />
               <Route path="/detalle/:idProducto" element={<ItemDetailContainer/>}/>
-              <Route path='*' element={ <div>Error404</div>}/>
+              <Route path="/" element={<ItemCount stock={5} agregarAlCarrito={agregarAlCarrito}/>}/>  
+              <Route path="/Contador" element={<ContadorEventListener/>}/>
+              <Route path="/formulario" element={<Formulario/>}/>
+
+
             </Routes>
+           
            <Titulo/>
-        <ItemDetailContainer/>
+          <ItemDetailContainer/>
+        </CartProvider>
       </BrowserRouter>
 
   )
@@ -33,4 +49,4 @@ function App() {
 
 
 
-export default App
+export default App;

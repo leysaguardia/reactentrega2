@@ -1,0 +1,58 @@
+/* Contenedor principal */
+.contador-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo del número del contador */
+  .contador {
+    font-size: 6rem;  /* Tamaño más grande */
+    font-weight: bold;
+    margin-bottom: 40px; /* Más separación respecto a los botones */
+    color: #333;
+    text-align: center; /* Asegura que el texto esté centrado */
+    width: auto;
+  }
+  
+  /* Botones */
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px; /* Tamaño del texto del botón más grande */
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #3e8e41;
+  }
+  
+  /* Botón restar con color diferente */
+  #botonRestar {
+    background-color: #f44336;
+  }
+  
+  #botonRestar:hover {
+    background-color: #e41f1c;
+  }
+  
+  #botonRestar:active {
+    background-color: #d41b18;
+  }
+  

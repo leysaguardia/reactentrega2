@@ -7,7 +7,8 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
     const { idProducto } = useParams ()
-    console.log(idProducto);
+    console.log (idProducto);
+    
 useEffect(()=>{
         obtenerProductos() .then((data)=>{
             console.log("data" , data);
@@ -17,7 +18,7 @@ useEffect(()=>{
                 if(productoEncontrado){
             setProducto(productoEncontrado);
         } 
-    console.log(productoEncontrado);
+    console.log (productoEncontrado);
     
     });
 }, [] );

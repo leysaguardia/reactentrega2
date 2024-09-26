@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget"
 
 import "./navbar.css"
+
 import { Link } from "react-router-dom"
 
 const NavBar = () => {
@@ -26,7 +27,7 @@ const NavBar = () => {
             </Link>
 
 
-            <Link to="/categoria/Rosaeas" className="category">
+            <Link to="/categoria/Rosaceas" className="category">
               <p>Rosaceas</p>
             </Link>
 
