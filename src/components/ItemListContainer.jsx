@@ -1,8 +1,8 @@
-
+import React from 'react';
 import { useState, useEffect } from "react"
-import obtenerProductos from "../data/data.js";
-import ItemList from "./ItemList.jsx";
-import { useParams } from "react-router-dom"
+import obtenerProductos from '../data/data.js'
+import ItemList from './ItemList';
+import { useParams } from 'react-router-dom'
 
 
 const ItemListContainer = ({ saludo }) => {
