@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { createContext, useState } from 'react';
 
 const CartContext = createContext();
@@ -16,10 +16,16 @@ const CartProvider = ({ children }) => {
             return totalProducto
         }
 
+
+    const precioTotal = () => {
+        const precio = carrito.reduce((total, productoCarrito) => total + (productoCarrito.cantidad * productoCarrito.precio ), 0)
+        return precio
+    }
+
     console.log(carrito)
 
     return (
-        <CartContext.Provider value={{ carrito, agregarProducto, cantidadTotal}}>
+        <CartContext.Provider value={{ carrito, agregarProducto, cantidadTotal, precioTotal}}>
             {children}
         </CartContext.Provider>
     );

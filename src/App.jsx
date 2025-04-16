@@ -7,6 +7,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import ItemCount from './components/ItemCount/ItemCount'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Cart from './components/Cart/cart'
 import ContadorEventListener from './components/ContadorEventListener'
 import Formulario from './components/Formulario'
 import CartProvider from './context/CartContext' 
@@ -35,6 +36,7 @@ function App() {
               <Route path="/" element={<ItemCount stock={5} agregarAlCarrito={agregarAlCarrito}/>}/>  
               <Route path="/Contador" element={<ContadorEventListener/>}/>
               <Route path="/formulario" element={<Formulario/>}/>
+              <Route path="/Cart" element={<Cart />} />
 
 
             </Routes>

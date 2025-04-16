@@ -9,7 +9,9 @@ const ItemDetail = ({ producto }) => {
 
   const agregarAlCarrito = (contador) => {
     const productoCarrito = { ...producto, cantidad: contador };
-   //agregarProducto(productoCarrito); // Agrega el producto al carrito
+   // // Agrega el producto al carrito4
+
+
     console.log(productoCarrito);
   };
 
@@ -21,7 +23,7 @@ const ItemDetail = ({ producto }) => {
       <div className='detail-text'>
         <h2>{producto.nombre}</h2>
         <p>{producto.descripcion}</p>
-        <p>Precio: c/u ${producto.precio}</p>
+        <p>Precio: c/u {producto.precio}</p>
         <ItemCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito} />
       </div>
     </div>
