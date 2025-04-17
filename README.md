@@ -1,1 +1,10 @@
-### Leysa Jaqueline Guardia
+# Mi App
+
+## Tecnologias utilizadas
+
+
+- uno
+- dos
+- tres 
+
+
