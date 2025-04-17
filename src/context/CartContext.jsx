@@ -12,15 +12,22 @@ const CartProvider = ({ children }) => {
     };
 
     const cantidadTotal = () => {
-            const totalProducto = carrito.reduce(( total, productoCarrito)  => total + productoCarrito.cantidad, 0)
-            return totalProducto
-        }
+        return carrito.reduce((total, productoCarrito) => {
+          const cantidad = productoCarrito?.cantidad ?? 0;
+          return total + cantidad;
+        }, 0);
+      };
+      
 
 
-    const precioTotal = () => {
-        const precio = carrito.reduce((total, productoCarrito) => total + (productoCarrito.cantidad * productoCarrito.precio ), 0)
-        return precio
-    }
+     const precioTotal = () => {
+            return carrito.reduce((total, productoCarrito) => {
+              const cantidad = productoCarrito?.cantidad ?? 0;
+              const precio = productoCarrito?.precio ?? 0;
+              return total + (cantidad * precio);
+            }, 0);
+          };
+          
 
     console.log(carrito)
 

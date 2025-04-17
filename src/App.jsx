@@ -21,7 +21,7 @@ const HomePage = () => (
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename="/reactentrega2">
       <CartProvider>
         <NavBar />
 

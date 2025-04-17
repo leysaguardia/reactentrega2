@@ -32,6 +32,8 @@ const ItemCount = ({stock, agregarAlCarrito}) => {
 
     </div>
   );
+  
 };
+
 
 export default ItemCount;
