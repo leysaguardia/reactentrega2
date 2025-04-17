@@ -1,6 +1,8 @@
 {
   "name": "reactjsnaturel-vite",
   "private": true,
+  "homepage": "https://tuusuario.github.io/reactentrega2",
+
   "version": "0.0.0",
   "type": "module",
   "scripts": {
