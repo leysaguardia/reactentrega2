@@ -1,33 +1,42 @@
-import React from 'react';
-import ItemCount from './ItemCount/ItemCount';
-import { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { db } from "../firebaseConfig";
+import {collection, getDoc, doc } from "firebase/firestore";
+
+const ItemDetail = () => {
+   const [item, setItem] = useState ({});
+
+   const { id } = useParams(); 
+
+   useEffect(() =>{
+      let refCollection = collection( db , "productos");
+      let refDoc = doc( refCollection, id);
+      getDoc(refDoc).then((res ) => {
+        setItem({ id: res.id, ...res.data() });
 
 
-const ItemDetail = ({ producto }) => {
-  const { carrito, agregarProducto } = useContext(CartContext);
-
-  const agregarAlCarrito = (contador) => {
-    const productoCarrito = { ...producto, cantidad: contador };
-   // // Agrega el producto al carrito4
+   });
 
 
-    console.log(productoCarrito);
-  };
+    
 
-  return (
-    <div className='detail'>
-      <div className='img-detail'>
-        <img src={producto.imagen} alt={producto.nombre} />
-      </div>
-      <div className='detail-text'>
-        <h2>{producto.nombre}</h2>
-        <p>{producto.descripcion}</p>
-        <p>Precio: c/u {producto.precio}</p>
-        <ItemCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito} />
-      </div>
+   }, [id]);
+
+   
+
+
+ return (
+
+    <div>
+        <h1>{item.nombre}</h1>
+        <img src={item.imageUrl} alt={item.nombre} />
+
+
     </div>
-  );
+ );
+
+
 };
 
 export default ItemDetail;
+

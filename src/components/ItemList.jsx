@@ -5,7 +5,9 @@ import Item from './Item';
 
 const ItemList = ({ productos }) => {
   return (
+
     <div>
+      
      {
           productos.map((producto) => (
           
@@ -13,10 +15,9 @@ const ItemList = ({ productos }) => {
         
      ))}
 
-
-
     </div>
   )
 }
+
 
 export default ItemList;

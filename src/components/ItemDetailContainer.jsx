@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect} from 'react'
 import obtenerProductos from '../data/data'
 import ItemDetail from './ItemDetail'
@@ -5,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState({})
+    const [productos, setProductos] = useState({})
     const { idProducto } = useParams ()
     console.log (idProducto);
     
@@ -16,7 +17,7 @@ useEffect(()=>{
                      (productoData) => productoData.id===parseInt(idProducto)
                     );
                 if(productoEncontrado){
-            setProducto(productoEncontrado);
+            setProductos(productoEncontrado);
         } 
     console.log (productoEncontrado);
     
@@ -25,7 +26,7 @@ useEffect(()=>{
 
 
 
-  return  <ItemDetail producto={producto}/>;
+  return  <ItemDetail productos={productos}/>;
   
 };
 

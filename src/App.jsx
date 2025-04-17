@@ -1,4 +1,3 @@
-
 import './App.css'
 
 import Titulo from './components/Titulo'
@@ -12,43 +11,34 @@ import ContadorEventListener from './components/ContadorEventListener'
 import Formulario from './components/Formulario'
 import CartProvider from './context/CartContext' 
 
-
+const HomePage = () => (
+  <>
+    <h1 className="titulo">Bienvenidos</h1>
+    <ItemListContainer saludo="Mermeladas naturales, libres de aditivos e ingredientes artificiales" />
+    <ItemCount stock={5} agregarAlCarrito={(count) => console.log(count)} />
+  </>
+);
 
 function App() {
- 
-
-    const agregarAlCarrito = (count) =>{
-      console.log(count)
-    }
-
-  
   return (
-      <BrowserRouter >
-        <CartProvider>
-          <NavBar/>
+    <BrowserRouter>
+      <CartProvider>
+        <NavBar />
 
-            <Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/categoria/:idCategoria" element={<ItemListContainer saludo="Filtrado por categoría" />} />
+          <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+          <Route path="/contador" element={<ContadorEventListener />} />
+          <Route path="/formulario" element={<Formulario />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
 
-              <Route path="/" element={ <ItemListContainer  saludo= "" />}/>
-              <Route path="/" element={ <h1 className='titulo'>{}</h1>}/>
-              <Route path="/categoria/:idCategoria" element={<ItemListContainer  saludo= "Mermeladas naturales, libres de aditivos e ingredientes artificiales" />} />
-              <Route path="/detalle/:idProducto" element={<ItemDetailContainer/>}/>
-              <Route path="/" element={<ItemCount stock={5} agregarAlCarrito={agregarAlCarrito}/>}/>  
-              <Route path="/Contador" element={<ContadorEventListener/>}/>
-              <Route path="/formulario" element={<Formulario/>}/>
-              <Route path="/Cart" element={<Cart />} />
-
-
-            </Routes>
-           
-           <Titulo/>
-          <ItemDetailContainer/>
-        </CartProvider>
-      </BrowserRouter>
-
-  )
+        <Titulo />
+      </CartProvider>
+    </BrowserRouter>
+  );
 }
 
-
-
 export default App;
+
